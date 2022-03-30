@@ -3,12 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
+
+import { RouterOutletComponent } from './routing/router-outlet/router-outlet.component';
+import { AppRoutingModule, routingCompoments } from './app-routing.module';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RouterOutletComponent,
+    routingCompoments
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,19 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-second',
+  templateUrl: './second.component.html',
+  styleUrls: ['./second.component.css']
 })
-export class AppComponent {
-  title = 'angular-study';
-  user =[
+export class SecondComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+  users =[
     {
     id: 1,
     name: "Leanne Graham",
     username: "Bret",
     email: "Sincere@april.biz",
     age: 30,
+    isEdit: false
     },
     {
     id: 2,
@@ -21,6 +26,7 @@ export class AppComponent {
     username: "Antonette",
     email: "Shanna@melissa.tv",
     age: 55,
+    isEdit: false
     },
     {
     id: 3,
@@ -28,6 +34,7 @@ export class AppComponent {
     username: "Samantha",
     email: "Nathan@yesenia.net",
     age: 26,
+    isEdit: false
     },
     {
     id: 4,
@@ -35,6 +42,7 @@ export class AppComponent {
     username: "Karianne",
     email: "Julianne.OConner@kory.org",
     age: 40,
+    isEdit: false
     },
     {
     id: 5,
@@ -42,6 +50,7 @@ export class AppComponent {
     username: "Kamren",
     email: "Lucio_Hettinger@annie.ca",
     age: 35,
+    isEdit: false
     },
     {
     id: 6,
@@ -49,6 +58,7 @@ export class AppComponent {
     username: "Leopoldo_Corkery",
     email: "Karley_Dach@jasper.info",
     age: 20,
+    isEdit: false
     },
     {
     id: 7,
@@ -56,6 +66,22 @@ export class AppComponent {
     username: "Elwyn.Skiles",
     email: "Telly.Hoeger@billy.biz",
     age: 18,
+    isEdit: false
     }
   ]
+
+  delete(i: number): void {
+    console.log(i);
+    this.users = this.users.filter(elm => elm.id !== i );
+  }
+  edit(i:number,  ): void {
+    console.log(i);
+
+      this.users.forEach(element=> {
+        if (element.id === i) {
+          element.isEdit = true;
+        }
+      });
+
+  }
 }

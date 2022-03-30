@@ -1,13 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-first',
+  templateUrl: './first.component.html',
+  styleUrls: ['./first.component.css']
 })
-export class AppComponent {
-  title = 'angular-study';
-  user =[
+export class FirstComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+  users =[
     {
     id: 1,
     name: "Leanne Graham",

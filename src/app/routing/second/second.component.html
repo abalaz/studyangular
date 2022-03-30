@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <th>name</th>
+    <th>age</th>
+    <th>choose</th>
+  </tr>
+  <tr *ngFor="let u of users; let i = index">
+    <th *ngIf="!u.isEdit">{{u.name}}</th>
+    <th *ngIf="u.isEdit">
+      <input type="text" value="{{u.name}}">
+    </th>
+    <th *ngIf="!u.isEdit">{{u.age}}</th>
+    <th *ngIf="u.isEdit">
+      <input type="text" value="{{u.age}}">
+    </th>
+    <th><button (click)="delete(u.id)">Delete</button></th>
+    <th class="edit"><button (click)="edit(u.id)">Edit</button></th>
+  </tr>
+</table>

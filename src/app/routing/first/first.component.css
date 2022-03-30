@@ -1,5 +1,5 @@
 table, tr , th {
+  background-color: bisque;
   border:1px solid black;
-
+  width: 80%;
 }
-
