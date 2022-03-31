@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-second',
@@ -7,10 +9,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecondComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
   users =[
     {
     id: 1,
@@ -69,24 +67,40 @@ export class SecondComponent implements OnInit {
     isEdit: false
     }
   ]
+  detailForm = new FormGroup({
+    name:new FormControl(),
+    age: new FormControl(),
+
+  });
   btnval = "Edit";
+
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
   delete(i: number): void {
     console.log(i);
     this.users = this.users.filter(elm => elm.id !== i );
   }
 
-  edit(i:number,  ): void {
-    console.log(i);
-
-      this.users.forEach(element=> {
-        if (element.id === i) {
-          element.isEdit = true;
-        }
-        if (element.id === i){
-          this.btnval = "done";
+  edit(i:any): void {
+    this.users.forEach(element=> {
+      // find out the user
+      if (element.id === i.id) {
+        const name = i.name;
+        const age= i.age;
+        element.isEdit = true;
+        this.detailForm.patchValue({
+          name: name,
+          age: age
+        })
+      }
+      if (element.id === i.id){
+        this.btnval = "done";
         }
       });
-
   }
   doneEdit(id: number): void {
     this.users.forEach(element=> {
@@ -96,4 +110,17 @@ export class SecondComponent implements OnInit {
     });
   }
 
+  getInfo(id: number): void{
+    console.log('FORM', this.detailForm);
+    const value = this.detailForm.value;
+    console.log(value);
+    this.users.forEach(elm =>{
+      if(elm.id === id) {
+        elm.age = value.age;
+        elm.name = value.name;
+        elm.isEdit = false;
+      }
+    })
+
+  }
 }

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterOutletComponent } from './routing/router-outlet/router-outlet.component';
 import { AppRoutingModule, routingCompoments } from './app-routing.module';
 
@@ -16,7 +16,8 @@ import { AppRoutingModule, routingCompoments } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
