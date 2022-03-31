@@ -1,1 +1,21 @@
-<p>Hello world</p>
+<form [formGroup]="detailForm">
+  <span>
+    Name:
+    <input formControlName="name" type="text" placeholder="name">
+  </span>
+  <span>
+    Age:
+    <input formControlName="age" type="text" placeholder="age">
+  </span>
+  <button (click)="getInfo()">Ok</button>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>age</th>
+    </tr>
+    <tr>
+      <th>{{detailForm.value.name}}</th>
+      <th>{{detailForm.value.age}}</th>
+    </tr>
+  </table>
+</form>
