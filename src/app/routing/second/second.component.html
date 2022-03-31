@@ -14,6 +14,7 @@
       <input type="text" value="{{u.age}}">
     </th>
     <th><button (click)="delete(u.id)">Delete</button></th>
-    <th class="edit"><button (click)="edit(u.id)">Edit</button></th>
+    <th class="edit" *ngIf="!u.isEdit"><button (click)="edit(u.id)">Edit</button></th>
+    <th class="edit" *ngIf="u.isEdit"><button (click)="doneEdit(u.id)">Done</button></th>
   </tr>
 </table>

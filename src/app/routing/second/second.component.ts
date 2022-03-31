@@ -69,11 +69,12 @@ export class SecondComponent implements OnInit {
     isEdit: false
     }
   ]
-
+  btnval = "Edit";
   delete(i: number): void {
     console.log(i);
     this.users = this.users.filter(elm => elm.id !== i );
   }
+
   edit(i:number,  ): void {
     console.log(i);
 
@@ -81,7 +82,18 @@ export class SecondComponent implements OnInit {
         if (element.id === i) {
           element.isEdit = true;
         }
+        if (element.id === i){
+          this.btnval = "done";
+        }
       });
 
   }
+  doneEdit(id: number): void {
+    this.users.forEach(element=> {
+      if (element.id === id) {
+        element.isEdit = false;
+      }
+    });
+  }
+
 }
