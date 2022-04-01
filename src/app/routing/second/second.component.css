@@ -3,3 +3,15 @@ table, tr , th {
   border:1px solid black;
   width: 80%;
 }
+.add_name {
+  background-color: rgb(238, 234, 231);
+  padding: 2px;
+  margin-right: 6px;
+}
+.add_age input{
+  padding: 6px;
+  width: 26px;
+}
+#buttom_add{
+  margin-left: 145px;
+}

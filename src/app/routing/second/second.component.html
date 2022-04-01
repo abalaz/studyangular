@@ -1,9 +1,20 @@
+<span class="add_name">
+  Name:
+  <input  formControlName="name" type="text" placeholder="name">
+</span>
+<br>
+<span class="ad_age">
+  Age:
+  <input class="ad_age" formControlName="age" type="text" placeholder="age">
+</span>
+<button id="buttom_add" (click)="additem()">add</button>
 <form [formGroup]="detailForm">
   <table>
     <tr>
       <th>name</th>
       <th>age</th>
-      <th>choose</th>
+      <th colspan="2">choose</th>
+
     </tr>
     <tr *ngFor="let u of users; let i = index">
       <th *ngIf="!u.isEdit">{{u.name}}</th>
@@ -19,4 +30,5 @@
       <th class="edit" *ngIf="u.isEdit"><button (click)="getInfo(u.id)">Done</button></th>
     </tr>
   </table>
+
 </form>
