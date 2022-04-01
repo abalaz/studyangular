@@ -1,34 +1,39 @@
-<span class="add_name">
-  Name:
-  <input  formControlName="name" type="text" placeholder="name">
-</span>
-<br>
-<span class="ad_age">
-  Age:
-  <input class="ad_age" formControlName="age" type="text" placeholder="age">
-</span>
-<button id="buttom_add" (click)="additem()">add</button>
-<form [formGroup]="detailForm">
-  <table>
-    <tr>
-      <th>name</th>
-      <th>age</th>
-      <th colspan="2">choose</th>
+<div class="wrapper">
+  <form [formGroup]="detailForm">
+    <div class="add-panel">
+      <span class="add_name">
+        Name:
+        <input class="txt-input"  formControlName="name" type="text" placeholder="name">
+      </span>
+      <br>
+      <span class="ad_age">
+        Age:
+        <input class="txt-input" formControlName="age" type="text" placeholder="age">
+      </span>
+      <button class="glyphicon glyphicon-plus" id="buttom_add" (click)="additem()"> Add</button>
+    </div>
+    <table>
+      <tr id="head">
+        <th class="name" >Name</th>
+        <th class="age">Age</th>
+        <th class= "choose"colspan="2" ></th>
 
-    </tr>
-    <tr *ngFor="let u of users; let i = index">
-      <th *ngIf="!u.isEdit">{{u.name}}</th>
-      <th *ngIf="u.isEdit">
-        <input formControlName="name" type="text" value="{{u.name}}">
-      </th>
-      <th *ngIf="!u.isEdit">{{u.age}}</th>
-      <th *ngIf="u.isEdit">
-        <input formControlName="age" type="text"  value="{{u.age}}">
-      </th>
-      <th><button (click)="delete(u.id)">Delete</button></th>
-      <th class="edit" *ngIf="!u.isEdit"><button (click)="edit(u)">Edit</button></th>
-      <th class="edit" *ngIf="u.isEdit"><button (click)="getInfo(u.id)">Done</button></th>
-    </tr>
-  </table>
+      </tr>
+      <tr *ngFor="let u of users; let i = index">
+        <th class="name" *ngIf="!u.isEdit">{{u.name}}</th>
+        <th class="name" *ngIf="u.isEdit">
+          <input  formControlName="name" type="text" value="{{u.name}}">
+        </th>
+        <th class="age" *ngIf="!u.isEdit">{{u.age}}</th>
+        <th class="age" *ngIf="u.isEdit">
+          <input  formControlName="age" type="text"  value="{{u.age}}">
+        </th>
+        <th class="choose choose_delete"><button class="glyphicon glyphicon-trash " [ngClass]="isEditing ? 'disabled' : 'active'" (click)="delete(u.id)" [disabled]="isEditing"> Delete </button></th>
+        <th class="choose choose_edit" *ngIf="!u.isEdit"><button class="glyphicon glyphicon-erase"  (click)="edit(u)" [disabled]="isEditing"> Edit </button></th>
+        <th class="choose choose_done" *ngIf="u.isEdit"><button class="glyphicon glyphicon-ok" [ngClass]="isEditing? '':''" (click)="getInfo(u.id)"> Done </button></th>
+      </tr>
+    </table>
 
-</form>
+  </form>
+
+</div>

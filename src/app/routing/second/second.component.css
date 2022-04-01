@@ -1,17 +1,128 @@
-table, tr , th {
-  background-color: aquamarine;
+/* table, tr , th {
+  background-color: rgb(127, 246, 255);
   border:1px solid black;
   width: 80%;
+  margin-left: 6px;
+  width: auto;
+  height: auto;
+  text-align: center;
+
+} */
+
+table {
+  width: 60%;
+  border: 1px solid gray;
+  margin: 20px 50px 0px 50px;
 }
-.add_name {
-  background-color: rgb(238, 234, 231);
-  padding: 2px;
-  margin-right: 6px;
+th, tr {
+  border: 1px solid gray;
+  height: 30px;
 }
-.add_age input{
-  padding: 6px;
-  width: 26px;
+
+form.ng-untouched.ng-pristine.ng-valid {
+  background-color: rgb(255, 255, 255);
 }
-#buttom_add{
-  margin-left: 145px;
+.wrapper {
+  background-color: #fff;
+  width: 100%;
+  height: calc(100vh - 100px);
 }
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.add-panel {
+  width: 100%;
+  display: flex;
+  margin: 10px 0px;
+  padding: 0px 20%;
+}
+
+input.txt-input {
+  width: 243px;
+  margin: 0px 10px;
+  border: 1px solid #000;
+  border-radius: 0px;
+  height: 32px;
+  text-indent: 7px;
+}
+input.txt-input:focus {
+  outline: none;
+}
+
+button#buttom_add {
+  background: #54ad44;
+  border: none;
+  padding: 8px 16px;
+  margin-left: 20px;
+  font-size: 15px;
+  color: #fff;
+}
+th{
+  padding: 4px;
+}
+th.name {
+  width: 40%;
+  padding-left: 9px;
+}
+th.age {
+  padding-left: 14px;
+  width: 9%;
+}
+th.choose {
+
+  padding-left: 15px;
+  width: 15%;
+}
+tr#head {
+  background: black;
+    color: white;
+    font-family: inherit;
+    font-size: x-large;
+}
+
+button.glyphicon.glyphicon-trash.active {
+  background-color: rgb(255 47 47);
+  color: #fff;
+  border: none;
+  padding: 8px 25px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+button.glyphicon.glyphicon-trash.disabled {
+  background-color: grey;
+  color: #fff;
+  border: none;
+  padding: 7px 21px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+button.glyphicon.glyphicon-erase {
+  background-color: #54ad44;
+  color: #fff;
+  border: none;
+  padding: 9px 27px;
+  font-size: 12px;
+  font-weight: 600;
+}
+button.glyphicon.glyphicon-ok {
+  padding: 7px 21px;
+  background-color: rgb(84 173 68);
+  border: none;
+  color: #fff;
+}
+input.ng-valid {
+  width: 100%;
+}
+input.txt-input{
+
+  width: 70%;
+}
+

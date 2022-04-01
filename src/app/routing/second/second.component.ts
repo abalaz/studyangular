@@ -61,6 +61,7 @@ export class SecondComponent implements OnInit {
   });
   btnval = "Edit";
   addval="";
+  isEditing = false;
 
   constructor() { }
 
@@ -76,6 +77,7 @@ export class SecondComponent implements OnInit {
     this.users.forEach(element=> {
       // find out the user
       if (element.id === i.id) {
+        this.isEditing = true;
         const name = i.name;
         const age= i.age;
         element.isEdit = true;
@@ -87,6 +89,7 @@ export class SecondComponent implements OnInit {
       if (element.id === i.id){
         this.btnval = "done";
         }
+
       });
   }
 
@@ -97,6 +100,7 @@ export class SecondComponent implements OnInit {
     console.log(value);
     this.users.forEach(elm =>{
       if(elm.id === id) {
+        this.isEditing = false;
         elm.age = value.age;
         elm.name = value.name;
         elm.isEdit = false;
