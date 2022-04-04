@@ -1,0 +1,21 @@
+
+
+  <div class='card'>
+    <div class='card-header'>
+      ngSwitch Example
+    </div>
+    <div class="card-body">
+      Input string : <input type='text' [(ngModel)]="nawm" />
+      <div [ngSwitch]="nawm" >
+        <!-- <div *ngSwitchCase="'English'">Sách có giá là $12</div>
+        <div *ngSwitchCase="'Commerce'">Sách có giá là $22</div>
+        <div *ngSwitchCase="'3'">Sách có giá là $12</div>
+        <div *ngSwitchCase="'2'">Sách có giá là $125</div>
+        <div *ngSwitchCase="'1'">Sách có giá là $12.99</div>
+        <div *ngSwitchDefault>This is Default</div> -->
+        <div *ngFor="let user of Users">
+          <div *ngSwitchCase="user.name">{{user.age}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
