@@ -1,0 +1,13 @@
+table{
+  width: 60%;
+  border: none;
+  background-color: white;
+}
+tr{
+  border: none ;
+}
+table, tr ,th{
+ margin: 0px auto;
+
+}
+
