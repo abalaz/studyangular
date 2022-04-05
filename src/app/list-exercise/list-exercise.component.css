@@ -1,13 +1,135 @@
-table{
-  width: 60%;
-  border: none;
+ table{
+  width: 50%;
   background-color: white;
+  border-collapse: collapse;
+  border: 1px solid #0000000a;
+  border-radius: 2px;
 }
-tr{
-  border: none ;
+tr, th{
+  border-bottom: 1px solid #b4a8a847;
+  border-top: 1px solid #b4a8a847;
+  text-align: left;
+  background-color: white;
+  border-radius: 2px;
 }
 table, tr ,th{
  margin: 0px auto;
 
 }
+.add_content {
+  margin: 20px auto;
+  margin-top: 0px;
+  width: 50%;
+  box-shadow: 3px 6px 6px 0px #2121210f;
 
+}
+.add_name, .btn_add{
+  padding: 10px;
+  background-color: white;
+}
+.add_name{
+  padding-bottom: 0px;
+    margin-bottom: 0px;
+    font-weight: 600;
+    font-size: 14px;
+}
+.btn_add{
+  padding-top: 0px;
+
+}
+.txb_add_name{
+  background-color: white;
+  border: 1px solid #b4a8a847;
+  margin-right: 10px;
+  width: 80%;
+  height: 25px;
+  text-indent: 3px;
+  border-radius: 5px;
+}
+.add{
+ background-color: #ff33ae;
+ width: 17%;
+ height:25px;
+ border: none;
+ border-radius: 2px;
+ color: #fff;
+ font-weight: 600;
+ font-size: small;
+}
+button{
+  border: none;
+  background-color: #ffffff;
+}
+
+button:focus {
+  outline: none;
+  border: none;
+}
+.fa-pen, .fa-trash{
+  color: #ff33ae;
+}
+.txb_add_name:focus{
+  outline: none;
+
+}
+.save {
+  width: 50%;
+  margin: 0px auto;
+  border: 1px solid #eae7e7;
+  padding: 5px;
+  background-color: white;
+}
+input.txt_save {
+  width: 68%;
+  margin: 3px 8px;
+  border: 1px solid #eae7e7;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 16px;
+}
+input.txt_save:focus{
+  outline: none;
+}
+button.btn_save {
+  border: 2px solid #ff33ae;
+  border-radius: 5px;
+  color: #ff33ae;
+  width: 17%;
+  margin-left: 3px;
+  font-weight: 600;
+  font-size: 14px;
+}
+button.btn_save:hover{
+  background-color: #ff33ae;
+  color: white;
+}
+
+.btn_actions {
+  display: flex;
+    justify-content: end;
+    height: 48px;
+    border: none;
+}
+button.fas.fa-trash {
+  margin: 0px 0px 0px 16px;
+}
+th.name {
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.container {
+  background-color: #fff;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
