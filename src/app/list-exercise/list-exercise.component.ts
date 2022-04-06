@@ -98,19 +98,28 @@ export class ListExerciseComponent implements OnInit {
     //     this.detailForm.reset();
     //   }
     // });
+    this.Lists.forEach(i =>{
+      if(i.id===this.editId) {
+        i.exercise= editData;
+        this.editId= null;
+        this.isEdited= false;
+        this.detailForm.reset();
+      }
+    })
   }
 
   addItem(){
     console.log('Form', this.detailForm)
     const value =this.detailForm.value;
     console.log(value);
-    const news = {
+    const userInfo = {
       id: this.Lists.length + 1,
-      exercise: value.exercises ,
+      exercise: value.exercise ,
       complete: value.complete = false,
       isEdit: value.isEdit = false
     };
-    this.Lists.push(news);
+    this.Lists.unshift(userInfo);
+    this.detailForm.reset();
   }
 
 }

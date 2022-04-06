@@ -4,24 +4,26 @@
     <p class="add_name">New todo:</p>
      <div class="btn_add"><input formControlName="exercise" class="txb_add_name" type="text"><button class="add" (click)="addItem()">Add</button></div>
   </div>
-  <div class="save" [ngClass]="isEdited ? 'show' : 'hidden'">
+  <div class="save" [ngClass]="isEdited ? 'show' : 'hidden'" >
     Edit: <input class="txt_save" #editData type="text" value=""><button class="btn_save" (click)="saveList(editData.value)">Save</button>
   </div>
-  <table>
-    <tr class="list_all" *ngFor="let list of Lists">
-      <th class="list_case"  ><input  type="checkbox" (click)="done(list.id)"  [checked]="list.complete"  ></th>
-      <th class="name" [ngClass]="list.complete? 'done' : ''" *ngIf="!list.isEdit">{{list.exercise}}</th>
+  <div class="div_table">
+    <table>
+      <tr class="list_all" *ngFor="let list of Lists">
+        <th class="list_case"  ><input  type="checkbox" (click)="done(list.id)"  [checked]="list.complete"  ></th>
+        <th class="name" [ngClass]="list.complete? 'done' : ''" *ngIf="!list.isEdit" di>{{list.exercise}}</th>
 
-      <!-- <th class="name" *ngIf="!u.isEdit">{{u.name}}</th>
-      <th class="name" *ngIf="u.isEdit">
-        <input  formControlName="name" type="text" value="{{u.name}}"> -->
+        <!-- <th class="name" *ngIf="!u.isEdit">{{u.name}}</th>
+        <th class="name" *ngIf="u.isEdit">
+          <input  formControlName="name" type="text" value="{{u.name}}"> -->
 
 
-      <th class="btn_actions">
-        <button class="fas fa-pen" [disabled]="isEdited" (click)="edit(list)"></button>
-        <button class="fas fa-trash" (click)="delet(list.id)"></button>
-      </th>
-    </tr>
-  </table>
+        <th class="btn_actions">
+          <button class="fas fa-pen" [ngClass]="isEdited ? 'disabled' : 'active'" [disabled]="isEdited" (click)="edit(list)"></button>
+          <button class="fas fa-trash" [ngClass]="isEdited ? 'disabled' : 'active'" (click)="delet(list.id)" [disabled]="isEdited"></button>
+        </th>
+      </tr>
+    </table>
+  </div>
 </div>
 

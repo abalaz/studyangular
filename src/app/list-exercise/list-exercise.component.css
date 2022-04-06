@@ -1,9 +1,10 @@
  table{
-  width: 50%;
+  width: 100%;
   background-color: white;
   border-collapse: collapse;
   border: 1px solid #0000000a;
   border-radius: 2px;
+
 }
 tr, th{
   border-bottom: 1px solid #b4a8a847;
@@ -18,10 +19,12 @@ table, tr ,th{
 }
 .add_content {
   margin: 20px auto;
-  margin-top: 0px;
-  width: 50%;
-  box-shadow: 3px 6px 6px 0px #2121210f;
-
+    margin-top: 0px;
+    width: 50%;
+    box-shadow: 3px 6px 6px 0px #2121210f;
+    height: 80px;
+    background-color: #fff;
+    transform: translateY(-34px);
 }
 .add_name, .btn_add{
   padding: 10px;
@@ -133,3 +136,24 @@ th.name {
 .show {
   visibility: visible;
 }
+.container{
+  height: auto;
+}
+.div_table{
+
+  margin: 0px auto;
+  height:140px;
+  width: 52%;
+  background-color: #fff;
+  transform: translateX(7px);
+}
+
+.fas.fa-trash.disabled, .fas.fa-pen.disabled  {
+  color: #e6e6e6;
+}
+.fas.fa-trash.active, .fas.fa-pen.active{
+  color: #ff33ae;
+}
+
+
+
